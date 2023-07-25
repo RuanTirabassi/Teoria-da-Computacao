@@ -14,8 +14,8 @@ with open(arquivo1, 'r') as arquivo_json:
     print(arq_json['final'][1])
     print(arq_json['transitions'][2]['to'])
     
-with open(arquivo2, 'r') as arquivo_csv:
-    arq_csv = csv.reader(arquivo_csv)
+with open(arquivo2, 'r') as arq_csv:
+    ler = csv.reader(arq_csv)
     for line_number, content in enumerate(arq_csv): 
         colunas = content.split(';')
         p = list(f"{colunas[0]}")
