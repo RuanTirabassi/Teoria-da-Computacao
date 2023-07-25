@@ -1,10 +1,8 @@
 {
     "initial": 0,
-    "final": [
-        4,
-        7
-    ],
-    "transitions": [
+    "final": [ 4, 7],
+    "transitions": 
+    [
         {
             "from": 0,
             "read": "a",
