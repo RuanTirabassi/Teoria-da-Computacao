@@ -27,18 +27,18 @@ with open(arquivo2, "r") as csvfile:
         # Adiciona a primeira string da coluna à lista
         entradas.append(linha[0])
 
-
-# Inicializa um novo vetor que irá conter as palavras separadas
-entradas_separadas = []
+# Cria uma lista vazia que irá conter as listas de strings
+lista_de_entradas = []
 
 # Itera sobre cada palavra do vetor de strings
 for palavra in entradas:
-    # Separa cada letra da palavra e cria um novo vetor com as letras
-    entradas_palavras = list(palavra)
+    # Separa cada letra da palavra e cria uma lista de strings
+    lista_letras = list(palavra)
     
-    # Adiciona o vetor de letras ao vetor_separado
-    entradas_separadas.append(entradas_palavras)
+    # Adiciona a lista de strings à lista_de_listas
+    lista_de_entradas.append(lista_letras)
 
 # Exibe o resultado
-print(entradas_separadas)
+print(lista_de_entradas)
+
 
