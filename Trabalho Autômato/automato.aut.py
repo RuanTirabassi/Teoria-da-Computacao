@@ -47,22 +47,49 @@ for ler_lista in lista_de_entradas:
     atual_state = initial_state
     print("----------------------")
 
-    for letra in ler_lista:
+# abab;1
+# ababcc;1
+# abcd;1
+# ababa;1
 
-        for transition in transitions:
-            from_state = transition["from"]
-            read_symbol = transition["read"]
-            to_state = transition["to"]
+    # for letra in ler_lista:
+    cont = 0
+    wrongLetter = False
+    for transition in transitions:
 
-            if (from_state == atual_state):
-                if (read_symbol == letra):
-                    atual_state = to_state
-                    print(atual_state)
+        from_state = transition["from"]
+        read_symbol = transition["read"]
+        to_state = transition["to"]
+
+        # print(str(from_state) + "-" + str(atual_state))
+
+        # print(str(ler_lista))
+        if (from_state == atual_state):
+
+            # print(str(read_symbol) + "-" + str(ler_lista[cont]))
+            if (read_symbol == ler_lista[cont]):
+                # print(str(cont) + "-" + str( len(ler_lista)-1))
+                # print(str(read_symbol) + "-" + ler_lista[cont])
+                atual_state = to_state
+                print(atual_state)
+
+                if (cont < len(ler_lista)-1):
+                    cont += 1
+                elif (cont == len(ler_lista)-1):
+                    # print("opa")
+                    break
+            else:
+                # print("off")
+                wrongLetter = True
+                break
+        # else:
+        #     print("zuo")
 
     print("\n")
+    # print(wrongLetter)
     valorFinal = 0
     for final in final_states:
-        if (atual_state == final):
+        if (atual_state == final and not wrongLetter):
             valorFinal = 1
             print(1)
     if (valorFinal == 0):
