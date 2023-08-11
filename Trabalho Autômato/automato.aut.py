@@ -1,6 +1,7 @@
 import json
 import sys
 import csv
+import time
 
 argvs = sys.argv
 arquivo1 = argvs[1]
@@ -56,6 +57,7 @@ for ler_lista in lista_de_entradas:
     cont = 0
     wrongLetter = False
     for transition in transitions:
+        tempo_inicial = time.time()
 
         from_state = transition["from"]
         read_symbol = transition["read"]
@@ -82,6 +84,7 @@ for ler_lista in lista_de_entradas:
                 # print("off")
                 wrongLetter = True
                 break
+        tempo_final = time.time()
         # else:
         #     print("zuo")
 
@@ -94,3 +97,5 @@ for ler_lista in lista_de_entradas:
             print(1)
     if (valorFinal == 0):
         print(0)
+
+print(f"demorou{float(tempo_final - tempo_inicial)} seg")
