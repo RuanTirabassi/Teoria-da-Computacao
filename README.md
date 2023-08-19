@@ -60,4 +60,11 @@
     avba;0
 
 ### arquivo_de_saida.out
+    abab;1;1;0.00000
+    aabb;0;0;0.00000
+    ababac;1;1;0.00000
+    avba;0;0;0.00000
+As saidas dos segundos deram zero porque o codigo ezecuta tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa apos a virgula, ainda da zero
+
+
     
