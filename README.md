@@ -6,13 +6,13 @@
      * Caso a entrada não leve até um estado final, ela é rejeitada.
        
  ### Funcionamento
- <p>Primeiramente, o programa automato.aut.py recebe o arquivo_do_autoamto.aut.json, arquivo_de_teste.in.csv e arquivo_de_saida.out, respectivamente, que foram passados através do terminal.Posteriormente, os arquivos json e csv são abertos e lidos, para
+ <p>Primeiramente, o programa automato.aut.py recebe o arquivo_do_autoamto.aut.json, arquivo_de_teste.in.csv e arquivo_de_saida.out, respectivamente, que foram passados através do terminal. Posteriormente, os arquivos json e csv são abertos e lidos, para
   assim o código do autômato em si funcionar fazendo seus devidos processos e escrevendo os resultados no
   arquivo de saída.
  </p>
  
 ### arquivo_do_autoamto.aut.json
-<p>Especificação da máquina de estados disponibilizado em formato JSON</p>
+<p>Especificação do Autômato disponibilizado em formato JSON</p>
     
     {
     "initial": 0,
@@ -68,7 +68,12 @@
     ababac;1;1;0.00000
     avba;0;0;0.00000
 
-As saidas dos segundos deram zero porque o codigo excuta tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.
+<p>As saidas dos segundos deram zero porque o codigo executa tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.</p>
+
+### Execução da ferramenta
+<p>A execução da ferramenta acontece a partir da linha de comando conforme foi proposto, para executar sera necessário utilizar o seguinte comando:</p>
+
+$ python automato.aut.py arquivo_do_automato.aut.json arquivo_de_testes.in.csv arquivo_de_saida.out.csv
 
 
     
