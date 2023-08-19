@@ -61,7 +61,7 @@
     avba;0
 
 ### arquivo_de_saida.out
-<p>Após a execução, o resultado deverá ser armazenado em um arquivo de saída conforme o modelo: PalavraDeEntrada;ResultadoEsperado;ResultadoObtido;Tempo</p>
+<p>Após a execução, o resulto foi armazenado em um arquivo de saída, conforme foi proposto: PalavraDeEntrada;ResultadoEsperado;ResultadoObtido;Tempo</p>
     
     abab;1;1;0.00000
     aabb;0;0;0.00000
