@@ -6,13 +6,13 @@
      * Caso a entrada não leve até um estado final, ela é rejeitada.
        
  ### Funcionamento
- <p>Primeiramente, o programa recebe o nome do arquivo json, css e arquivo de saída, respectivamente
-  que foram passados através do terminal.Posteriormente, os arquivos json e css são abertos e lidos, para
+ <p>Primeiramente, o programa automato.aut.py recebe o arquivo_do_autoamto.aut.json, arquivo_de_teste.in.csv e arquivo_de_saida.out, respectivamente, que foram passados através do terminal. Posteriormente, os arquivos json e csv são abertos e lidos, para
   assim o código do autômato em si funcionar fazendo seus devidos processos e escrevendo os resultados no
   arquivo de saída.
  </p>
  
 ### arquivo_do_autoamto.aut.json
+<p>São as especificações do Autômato</p>
     {
     "initial": 0,
     "final": [4,5],
@@ -52,12 +52,14 @@
     }
 
 ### arquivo_de_teste.in.csv
+<p>Entradas para teste disponibilizado em CSV: PalavraDeEntrada;ResultadoEsperado(1 aceita/0 rejeita)</p>
     abab;1
     aabb;0
     ababac;1
     avba;0
 
 ### arquivo_de_saida.out
+<p>Após a execução, o resultado deverá ser armazenado em um arquivo de saída conforme o modelo: PalavraDeEntrada;ResultadoEsperado;ResultadoObtido;Tempo</p>
     abab;1;1;0.00000
     aabb;0;0;0.00000
     ababac;1;1;0.00000
