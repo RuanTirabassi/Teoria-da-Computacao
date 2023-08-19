@@ -6,7 +6,7 @@ import time
 argvs = sys.argv
 arquivo1 = argvs[1]
 arquivo2 = argvs[2]
-# arquivo3 = argvs[3]
+arquivo3 = argvs[3]
 
 # Abre o arquivo Json e lê os dados
 with open(arquivo1, 'r') as dados:
@@ -23,7 +23,7 @@ with open(arquivo2, "r") as csvfile:
     # Itera sobre as linhas do arquivo
     for linha in arq_csv:
         # Adiciona a primeira string da coluna à lista
-        entradas.append(linha[0])
+        entradas.append(linha)
 
 # Cria uma lista vazia que irá conter as listas de strings
 lista_de_entradas = []
