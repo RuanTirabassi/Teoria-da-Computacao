@@ -8,14 +8,14 @@ arquivo1 = argvs[1]
 arquivo2 = argvs[2]
 arquivo3 = argvs[3]
 
-# Abre o arquivo Json e lê os dados
+# Abre o arquivo Json no modo leitura
 with open(arquivo1, 'r') as dados:
     arq_json = json.load(dados)
 
 # Lista para armazenar as strings da primeira coluna
 entradas = []
 
-# Abre o arquivo CSV e lê os dados
+# Abre o arquivo csv no modo leitura
 with open(arquivo2, "r") as csvfile:
     # Criamos o leitor CSV
     arq_csv = csv.reader(csvfile, delimiter=";")
@@ -25,77 +25,58 @@ with open(arquivo2, "r") as csvfile:
         # Adiciona a primeira string da coluna à lista
         entradas.append(linha)
 
-# Cria uma lista vazia que irá conter as listas de strings
-lista_de_entradas = []
-
-# Itera sobre cada palavra do vetor de strings
-for palavra in entradas:
-    # Separa cada letra da palavra e cria uma lista de strings
-    lista_letras = list(palavra)
-
-    # Adiciona a lista de strings à lista_de_listas
-    lista_de_entradas.append(lista_letras)
-
-# Exibe o resultado
-# print(lista_de_entradas)
-
+# Atrbuimos uma variável para cada especificação do json, assim podendo manipular de maneira mais facíl
 initial_state = arq_json["initial"]
 final_states = arq_json["final"]
 transitions = arq_json["transitions"]
 
-# Agora, vamos percorrer letra por letra de cada palavra dentro das listas
-for ler_lista in lista_de_entradas:
-    atual_state = initial_state
-    print("----------------------")
-
-# abab;1
-# ababcc;1
-# abcd;1
-# ababa;1
-
-    # for letra in ler_lista:
-    cont = 0
-    wrongLetter = False
-    for transition in transitions:
+# Abre o arquivo de saída em modo de escrita e escreve o resultado nele, juntamente com as entradas
+with open(arquivo3, "w") as saida:
+    # Agora, vamos percorrer cada entrada da lista de entradas
+    for entrada in entradas:
+        # Pega o tempo ao inicio do processo de cada palavra
         tempo_inicial = time.time()
 
-        from_state = transition["from"]
-        read_symbol = transition["read"]
-        to_state = transition["to"]
+        atual_state = initial_state
 
-        # print(str(from_state) + "-" + str(atual_state))
+        cont = 0
+        wrongLetter = False
+        # Vamos percorrer cada bloco do transitions no json
+        for transition in transitions:
 
-        # print(str(ler_lista))
-        if (from_state == atual_state):
+            # Atribui uma variavel para cada especificação do transition
+            from_state = transition["from"]
+            read_symbol = transition["read"]
+            to_state = transition["to"]
 
-            # print(str(read_symbol) + "-" + str(ler_lista[cont]))
-            if (read_symbol == ler_lista[cont]):
-                # print(str(cont) + "-" + str( len(ler_lista)-1))
-                # print(str(read_symbol) + "-" + ler_lista[cont])
-                atual_state = to_state
-                print(atual_state)
+            # Faz as comparações das letras do arquivo csv com as espcificações do arquivo json
+            if from_state == atual_state:
 
-                if (cont < len(ler_lista)-1):
-                    cont += 1
-                elif (cont == len(ler_lista)-1):
-                    # print("opa")
+                if read_symbol == entrada[0][cont]:
+                    atual_state = to_state
+
+                    if cont < len(entrada[0]) - 1:
+                        cont += 1
+                    elif cont == len(entrada[0]) - 1:
+
+                        break
+                else:
+
+                    wrongLetter = True
                     break
-            else:
-                # print("off")
-                wrongLetter = True
-                break
+
+        # Faz a verificação se aceita(1) ou rejeita(0)
+        valorFinal = 0
+        for final in final_states:
+            if atual_state == final and not wrongLetter:
+                valorFinal = 1
+        # Pega o tempo ao fim de todo o processo da palavra
         tempo_final = time.time()
-        # else:
-        #     print("zuo")
 
-    print("\n")
-    # print(wrongLetter)
-    valorFinal = 0
-    for final in final_states:
-        if (atual_state == final and not wrongLetter):
-            valorFinal = 1
-            print(1)
-    if (valorFinal == 0):
-        print(0)
+        # Escreve a entrada original e o resultado esperado no arquivo de saída
+        entrada_str = entrada[0]
+        resultado_esperado = entrada[1]
 
-print(f"demorou{float(tempo_final - tempo_inicial)} seg")
+        tempo = f"{tempo_final - tempo_inicial:.5f}"
+        saida.write(
+            f"{entrada_str};{resultado_esperado};{valorFinal};{tempo}\n")
