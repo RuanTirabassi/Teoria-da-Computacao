@@ -15,10 +15,7 @@
 ### arquivo_do_autoamto.aut.json
      {
     "initial": 0,
-    "final": [
-        4,
-        5
-    ],
+    "final": [4,5],
     "transitions": [
         {
             "from": 0,
