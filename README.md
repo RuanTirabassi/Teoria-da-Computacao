@@ -59,4 +59,5 @@
     ababac;1
     avba;0
 
+### arquivo_de_saida.out
     
