@@ -13,7 +13,7 @@
  </p>
  
 ### arquivo_do_autoamto.aut.json
-     {
+{
     "initial": 0,
     "final": [4,5],
     "transitions": [
@@ -61,7 +61,7 @@
     aabb;0;0;0.00000
     ababac;1;1;0.00000
     avba;0;0;0.00000
-As saidas dos segundos deram zero porque o codigo ezecuta tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa apos a virgula, ainda da zero
+As saidas dos segundos deram zero porque o codigo excuta tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.
 
 
     
