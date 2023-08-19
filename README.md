@@ -6,7 +6,7 @@
      * Caso a entrada não leve até um estado final, ela é rejeitada.
        
  ### Funcionamento
- <p>Primeiramente, o programa automato.aut.py recebe o arquivo_do_autoamto.aut.json, arquivo_de_teste.in.csv e arquivo_de_saida.out, respectivamente, que foram passados através do terminal. Posteriormente, os arquivos json e csv são abertos e lidos, para
+ <p>Primeiramente, o programa automato.aut.py recebe o arquivo_do_autoamto.aut.json, arquivo_de_teste.in.csv e arquivo_de_saida.out, respectivamente, que foram passados através do terminal.Posteriormente, os arquivos json e csv são abertos e lidos, para
   assim o código do autômato em si funcionar fazendo seus devidos processos e escrevendo os resultados no
   arquivo de saída.
  </p>
