@@ -11,5 +11,52 @@
   assim o código do autômato em si funcionar fazendo seus devidos processos e escrevendo os resultados no
   arquivo de saída.
  </p>
-
  
+### arquivo_do_autoamto.aut.json
+     {
+    "initial": 0,
+    "final": [
+        4,
+        5
+    ],
+    "transitions": [
+        {
+            "from": 0,
+            "read": "a",
+            "to": 1
+        },
+        {
+            "from": 1,
+            "read": "b",
+            "to": 2
+        },
+        {
+            "from": 2,
+            "read": "a",
+            "to": 3
+        },
+        {
+            "from": 3,
+            "read": "b",
+            "to": 4
+        },
+        {
+            "from": 4,
+            "read": "a",
+            "to": 5
+        },
+        {
+            "from": 5,
+            "read": "c",
+            "to": 5
+        }
+    ]
+}
+
+### arquivo_de_teste.in.csv
+    abab;1
+    aabb;0
+    ababac;1
+    avba;0
+
+    
