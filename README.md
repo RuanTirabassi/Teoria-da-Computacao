@@ -12,7 +12,8 @@
  </p>
  
 ### arquivo_do_autoamto.aut.json
-<p>São as especificações do Autômato</p>
+<p>Especificação da máquina de estados disponibilizado em formato JSON</p>
+    
     {
     "initial": 0,
     "final": [4,5],
@@ -53,6 +54,7 @@
 
 ### arquivo_de_teste.in.csv
 <p>Entradas para teste disponibilizado em CSV: PalavraDeEntrada;ResultadoEsperado(1 aceita/0 rejeita)</p>
+    
     abab;1
     aabb;0
     ababac;1
@@ -60,10 +62,12 @@
 
 ### arquivo_de_saida.out
 <p>Após a execução, o resultado deverá ser armazenado em um arquivo de saída conforme o modelo: PalavraDeEntrada;ResultadoEsperado;ResultadoObtido;Tempo</p>
+    
     abab;1;1;0.00000
     aabb;0;0;0.00000
     ababac;1;1;0.00000
     avba;0;0;0.00000
+
 As saidas dos segundos deram zero porque o codigo excuta tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.
 
 
