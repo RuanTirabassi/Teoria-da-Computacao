@@ -1,4 +1,4 @@
-## Simulador de Automato Deterministico
+# Simulador de Automato Deterministico
 ### Descrição
 * Automato Finito Determinisco
      * A cada interação ele lê a entrada e troca para o próximo estado
@@ -70,7 +70,7 @@
 
 <p>As saidas dos segundos deram zero porque o codigo executa tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.</p>
 
-### Execução da ferramenta
+## Execução da ferramenta
 <p>A execução da ferramenta acontece a partir da linha de comando conforme foi proposto, para executar sera necessário utilizar o seguinte comando:</p>
 
 $ python automato.aut.py arquivo_do_automato.aut.json arquivo_de_testes.in.csv arquivo_de_saida.out.csv
