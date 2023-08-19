@@ -13,10 +13,11 @@
  </p>
  
 ### arquivo_do_autoamto.aut.json
-{
+    {
     "initial": 0,
     "final": [4,5],
-    "transitions": [
+    "transitions": 
+    [
         {
             "from": 0,
             "read": "a",
@@ -48,7 +49,7 @@
             "to": 5
         }
     ]
-}
+    }
 
 ### arquivo_de_teste.in.csv
     abab;1
