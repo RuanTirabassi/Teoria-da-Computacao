@@ -161,6 +161,3 @@
 <p>A execução da ferramenta acontece a partir da linha de comando conforme foi proposto, para executar sera necessário utilizar o seguinte comando:</p>
 
 $ python automato.aut.py arquivo_do_automato.aut.json arquivo_de_testes.in.csv arquivo_de_saida.out.csv
-
-
-    
