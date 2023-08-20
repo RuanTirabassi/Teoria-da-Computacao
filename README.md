@@ -71,7 +71,7 @@
 <p>As saidas dos segundos deram zero porque o codigo executa tão rapido, que quando faz a diferença do inicial e final, mesmo com 5 casa após a vírgula, ainda da zero.</p>
 
 ### automato.aut.py
-<p>Codigo do automato</p>
+<p>Codigo do autômato</p>
 
     import json
     import sys
